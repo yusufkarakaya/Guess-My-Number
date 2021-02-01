@@ -10,10 +10,7 @@ let again = document.querySelector("#again");
 
 let randomNumber = Math.floor(Math.random() * 20);
 let scoreNumber = 20;
-
 let highScore = 0;
-
-console.log(randomNumber);
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -29,9 +26,9 @@ function check(event) {
   }
   if (event.target.value == randomNumber) {
     guessing.textContent = "Correct!";
-    // guessing.style.color = "green";
     questionMark.style.color = "green";
     document.body.style.backgroundColor = "green";
+    checkNumber.style.backgroundColor = "green";
     questionMark.textContent = randomNumber;
   }
   if (event.target.value < randomNumber) {
@@ -42,25 +39,23 @@ function check(event) {
 }
 
 btnCheck.addEventListener("click", function () {
-  if (scoreNumber > highScore) {
-    highScore = scoreNumber;
-  }
   if (guessing.textContent === "Correct!") {
     score.textContent = "Score : " + scoreNumber;
     highScore = scoreNumber;
+    if (scoreNumber > highScore) {
+      highScore = scoreNumber;
+    }
   } else scoreNumber--;
   score.textContent = "Score : " + scoreNumber;
-
-  console.log(scoreNumber);
-  console.log(highScore);
   highScoreId.textContent = "High Score : " + highScore;
 });
 
 again.addEventListener("click", function () {
   randomNumber = Math.floor(Math.random() * 20);
-  console.log(randomNumber);
   guessing.textContent = "Start guessing...";
   questionMark.textContent = "?";
   questionMark.style.color = "#222";
   document.body.style.backgroundColor = "#222";
+  score.textContent = "Score : " + 20;
+  checkNumber.style.backgroundColor = "#222";
 });
