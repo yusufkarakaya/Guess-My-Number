@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess My Number!</title>
+  </head>
+  <body>
+    <header>
+      <button id="again">Again</button>
+      <h2>Between 1 and 20</h2>
+    </header>
+    <main>
+      <section>
+        <h1 class="mainTitle">Guess My Number</h1>
+      </section>
+      <section class="solid">
+        <h1 id="question" class="questionMark">?</h1>
+      </section>
+      <section class="footerContainer">
+        <section class="check">
+          <input id="checkNumber" type="number" min="0" max="20" />
+          <button id="btn-check">Check!</button>
+        </section>
+
+        <section class="check">
+          <h2 id="guessing">Start guessing...</h2>
+          <h2 id="score">Score : 20</h2>
+          <h2 id="high-score">Highscore: 0</h2>
+        </section>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
